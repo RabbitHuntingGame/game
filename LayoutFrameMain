@@ -10,7 +10,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 
-public class CardLayout1 extends JFrame {
+public class CardLayout1 extends JFrame {				// add start panel and game
+									// panel to CardLayout
 	
 	
 	private JButton start;
@@ -36,7 +37,7 @@ public class CardLayout1 extends JFrame {
 		JPanel frontScreen = new panel();
 		
 		start = new JButton(icon);
-		start.addActionListener(new ActionListener(){
+		start.addActionListener(new ActionListener(){			// cause button to change card/panel
 			
 			public void  actionPerformed(ActionEvent e){
 				cardLayout.show(card, "2");
@@ -55,7 +56,7 @@ public class CardLayout1 extends JFrame {
 		
 	}
 
-	public static void main(String[] args) {
+	public static void main(String[] args) {  				// open and run file
 		
 		CardLayout1 frame = new CardLayout1();
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

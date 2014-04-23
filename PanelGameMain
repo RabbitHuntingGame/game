@@ -1,5 +1,4 @@
 
-
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Graphics;
@@ -34,7 +33,7 @@ public class panel extends JPanel {
 	public Graphics g;
 	
 	
-	panel(){
+	panel(){					// this is the game screen
 	
 		setLayout(new BorderLayout());
 		setBackground(Color.white);
@@ -65,11 +64,11 @@ public class panel extends JPanel {
 	
 	}
 	
-	public void Count(){
+	public void Count(){						// ignore for now
 		countTimer = new Timer(1000, new Action());
 	}
 	
-	public void paintComponent(Graphics g){
+	public void paintComponent(Graphics g){				// painting to panel
 		super.paintComponent(g);
 		
 		
@@ -135,7 +134,7 @@ public class panel extends JPanel {
 		
 	}
 	
-	private class MoveRabbit implements ActionListener{
+	private class MoveRabbit implements ActionListener{		// restart the rabbits posiiton
 		public void actionPerformed(ActionEvent e) {
 			Random rand = new Random();
 			
@@ -151,16 +150,16 @@ public class panel extends JPanel {
 			}
 		}
 	
-	private class MovePlus implements ActionListener{
-		public void actionPerformed(ActionEvent e){
+	private class MovePlus implements ActionListener{			// move the plus sign up 
+		public void actionPerformed(ActionEvent e){			// when the rabbit is hit
 			
 			clickedY = clickedY - plusINCREMENT;
 			
 		}
 	}
 		
-	private class ClickTarget implements MouseListener{
-		public void mouseClicked(MouseEvent e){
+	private class ClickTarget implements MouseListener{			// determine whether the rabbit
+		public void mouseClicked(MouseEvent e){				// has been hit
 			clickedX = e.getX();
 			clickedY = e.getY();
 			
